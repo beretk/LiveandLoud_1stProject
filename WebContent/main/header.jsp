@@ -26,11 +26,12 @@
 		line-height: 30px;
 		margin: 0 auto;
 	}
-	header .gnb ul li {	float: left;	margin-right: 30px;}
+	/* header .gnb ul li {	float: left;	margin-right: 30px;} */
+	header .gnb ul li {	float: left;	margin: 0 auto;}
 	header .gnb a { 
 		color : #ffffaa;
 		/* color : #000000; */
-		font-size: 0.8em;
+		font-size: 0.7em;
 		display: block;
 		padding-left:15px;
 		padding-right:15px;
@@ -86,10 +87,10 @@
         	<ul>
         		<%-- <li><a href="${conPath }/intro.jsp">소개 </a></li> --%> 
         		<li><a href="http://liveandloud.co.kr/homepage/image/intro2.jpg">소개</a></li>
-                <li><a href="${conPath }/boardList.do">게시판</a></li>
-                <li><a href="${conPath }/noticeList.do">공지사항</a></li>
                 <li><a href="${conPath }/equipmentList.do">장비</a></li>
+                <li><a href="${conPath }/noticeList.do">공지사항</a></li>
                 <li><a href="${conPath }/photoList.do">공연사진</a>
+                <li><a href="${conPath }/boardList.do">게시판</a></li>
                 <li><a href="http://liveandloud.co.kr/homepage/image/map.jpg">약도</a></li>
                 <!-- <li><a href="../admin/map.jsp">약도</a></li> -->
         	</ul>

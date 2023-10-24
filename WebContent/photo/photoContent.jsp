@@ -48,12 +48,8 @@
 				 		<button onclick="location='${conPath}/photoModifyView.do?pid=${photo.pid }&pageNum=${param.pageNum }'">수정</button>
 				 	</c:if>
 				 	<c:if test="${admin.aid eq photo.aid or not empty admin}">
-						<button onclick="location='${conPath}/photoDelete.do?pgroup=${photo.pgroup }&pstep=${photo.pstep}
-											&pindent=${photo.pindent }&pageNum=${param.pageNum }'">삭제</button>
+						<button onclick="location='${conPath}/photoDelete.do?pid=${photo.pid }&pageNum=${param.pageNum }'">삭제</button>
 			 		</c:if>
-			 		<c:if test="${not empty admin }">
-				 		<button onclick="location='${conPath}/photoReplyView.do?pid=${photo.pid }&pageNum=${param.pageNum }'">답변</button>
-				 	</c:if>
 				 	<button onclick="location='${conPath}/photoList.do?pageNum=${param.pageNum }'">목록</button>
 		</table>
 	</div>

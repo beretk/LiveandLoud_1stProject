@@ -7,11 +7,11 @@
 
 #content_form table {
 	/* border: 2px solid pink; width:90%; margin: 0px auto; */
-	border: 2px solid yellow; width:100%; margin: 0px auto;
+	border: 1px solid yellow; width:100%; margin: 0px auto;
 }
 /* #content_form table tr { background-color: #FFE271; height:40px; } */
-#content_form table tr { background-color: yellow; height:40px; }
-#content_form table tr:hover { background-color: orange;
+#content_form table tr { background-color: #00ff00; height:40px; }
+#content_form table tr:hover { background-color: rgb(255, 128, 255);
 	cursor: pointer;
 }
 #content_form td, #content_form th {text-align: center; padding:5px; }

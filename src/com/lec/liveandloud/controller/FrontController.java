@@ -149,16 +149,6 @@ public class FrontController extends HttpServlet {
 			service = new NoticeDeleteService();
 			service.execute(request, response);
 			viewPage = "noticeList.do";		
-		}else if(command.equals("/noticeReplyView.do")) {
-			service = new NoticeReplyViewService();
-			service.execute(request, response);
-			viewPage = "notice/noticeReply.jsp";
-		}else if(command.equals("/noticeReply.do")) {
-			service = new NoticeReplyService();
-			service.execute(request, response);
-			viewPage = "noticeList.do";
-		
-			
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
 		 * * * * * * * * 공연사진 관련 요청  * * * * * * * * * *
 		 * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -188,14 +178,6 @@ public class FrontController extends HttpServlet {
 			service = new PhotoDeleteService();
 			service.execute(request, response);
 			viewPage = "photoList.do";		
-		}else if(command.equals("/photoReplyView.do")) {
-			service = new PhotoReplyViewService();
-			service.execute(request, response);
-			viewPage = "photo/photoReply.jsp";
-		}else if(command.equals("/photoReply.do")) {
-			service = new PhotoReplyService();
-			service.execute(request, response);
-			viewPage = "photoList.do"	;
 			
 		/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
 		 * * * * * * * * 장비 관련 요청  * * * * * * * * * *
@@ -215,7 +197,7 @@ public class FrontController extends HttpServlet {
 			service.execute(request, response);
 			viewPage = "equipment/equipmentContent.jsp";
 		}else if(command.equals("/equipmentModifyView.do")) {
-			service = new EuipmentModifyViewService();
+			service = new EquipmentModifyViewService();
 			service.execute(request, response);
 			viewPage = "equipment/equipmentModify.jsp";
 		}else if(command.equals("/equipmentModify.do")) {
@@ -226,14 +208,6 @@ public class FrontController extends HttpServlet {
 			service = new EquipmentDeleteService();
 			service.execute(request, response);
 			viewPage = "equipmentList.do";		
-		}else if(command.equals("/equipmentReplyView.do")) {
-			service = new EquipmentReplyViewService();
-			service.execute(request, response);
-			viewPage = "equipment/equipmentReply.jsp";
-		}else if(command.equals("/equipmentReply.do")) {
-			service = new EquipmentReplyService();
-			service.execute(request, response);
-			viewPage = "equipmentList.do"	;
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

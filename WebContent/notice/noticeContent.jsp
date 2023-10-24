@@ -48,12 +48,8 @@
 				 		<button onclick="location='${conPath}/noticeModifyView.do?nid=${notice.nid }&pageNum=${param.pageNum }'">수정</button>
 				 	</c:if>
 				 	<c:if test="${admin.aid eq notice.aid or not empty admin}">
-						<button onclick="location='${conPath}/noticeDelete.do?ngroup=${notice.ngroup }
-											&nstep=${notice.nstep}&nindent=${notice.nindent }&pageNum=${param.pageNum }'">삭제</button>
+						<button onclick="location='${conPath}/noticeDelete.do?nid=${notice.nid }&pageNum=${param.pageNum }'">삭제</button>
 			 		</c:if>
-			 		<c:if test="${not empty admin }">
-				 		<button onclick="location='${conPath}/noticeReplyView.do?nid=${notice.nid }&pageNum=${param.pageNum }'">답변</button>
-				 	</c:if>
 				 	<button onclick="location='${conPath}/noticeList.do?pageNum=${param.pageNum }'">목록</button>
 		</table>
 	</div>

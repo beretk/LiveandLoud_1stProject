@@ -5,20 +5,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lec.liveandloud.dao.BoardDao;
 import com.lec.liveandloud.dao.EquipmentDao;
+import com.lec.liveandloud.dao.NoticeDao;
 
 public class EquipmentDeleteService implements Service {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		int egroup = Integer.parseInt(request.getParameter("egroup"));
-		int estep = Integer.parseInt(request.getParameter("estep"));
-		int eindent = Integer.parseInt(request.getParameter("eindent"));
+		int eid = Integer.parseInt(request.getParameter("eid"));
 		EquipmentDao equipmentDao = EquipmentDao.getInstance();
-		int deleteCnt = equipmentDao.deleteEquipment(egroup, estep, eindent);
+		int deleteCnt = equipmentDao.deleteEquipment(eid);
 		if(deleteCnt >= EquipmentDao.SUCCESS) {
-			request.setAttribute("equipmentResult", "글(답변글 포함) "+deleteCnt+"개 글 삭제 성공");
-		}else {
-			request.setAttribute("equipmentResult", "글(답변글도 모두) 삭제 안 됨");
+			request.setAttribute("equipmentResult", "글 "+deleteCnt+"개 글 삭제 성공");
 		}
 	}
 }

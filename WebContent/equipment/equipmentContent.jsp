@@ -48,12 +48,9 @@
 				 		<button onclick="location='${conPath}/equipmentModifyView.do?eid=${equipment.eid }&pageNum=${param.pageNum }'">수정</button>
 				 	</c:if>
 				 	<c:if test="${admin.aid eq equipment.aid or not empty admin}">
-						<button onclick="location='${conPath}/equipmentDelete.do?egroup=${equipment.egroup }
-											&estep=${equipment.estep}&eindent=${equipment.eindent }&pageNum=${param.pageNum }'">삭제</button>
+						<button onclick="location='${conPath}/equipmentDelete.do?eid=${equipment.eid }&pageNum=${param.pageNum }'">삭제</button>
 			 		</c:if>
-			 		<c:if test="${not empty admin }">
-				 		<button onclick="location='${conPath}/equipmentReplyView.do?eid=${equipment.eid }&pageNum=${param.pageNum }'">답변</button>
-				 	</c:if>
+			 		
 				 	<button onclick="location='${conPath}/equipmentList.do?pageNum=${param.pageNum }'">목록</button>
 		</table>
 	</div>

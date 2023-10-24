@@ -16,7 +16,9 @@
 		}
 		#content_form table tr { height: 10px;}
 	</style>
-	
+	<style>
+		html, body { overflow:hidden; }
+	</style>
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script>
 		$(document).ready(function(){

@@ -14,6 +14,7 @@
 			height:430px;
 			margin: 70px auto 0px;
 		}
+		
 	</style>
 </head>
 <body>
@@ -31,7 +32,7 @@
 	<jsp:include page="../main/header.jsp"/>
 	<div id="content_form">
 		<table>
-			<caption>전체회원보기</caption>
+			<caption><b>전체회원보기</b></caption>
 			<tr>
 				<c:forEach var="dto" items="${members }">
 					<td>
