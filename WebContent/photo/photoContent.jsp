@@ -31,7 +31,7 @@
 			<tr><td>제목</td><td>${photo.ptitle }</td></tr>
 			<tr><td>본문</td><td><pre>${photo.pcontent}</pre></td></tr>
 			<tr><th>조회수</th><td>${photo.phit }</td></tr>
-			<tr>
+			<%-- <tr>
 				<th>첨부파일</th>
 				<td>
 					<c:if test="${not empty photo.pfileName }">
@@ -41,7 +41,18 @@
 						첨부파일없음
 					</c:if>
 				</td>
-			</tr>
+			</tr> --%>
+			<tr>
+					<th>사진</th>
+					<td>
+					<c:if test="${not empty photo.pfileName }">
+						<a href="${conPath }/photoUp/${photo.pfileName}" target="_blank">${photo.pfileName}</a>
+					</c:if>
+					<c:if test="${empty photo.pfileName }">
+						사진없음
+					</c:if>
+				</td>
+				</tr>
 			<tr>
 				<td colspan="2">
 					<c:if test="${admin.aid eq photo.aid }">
