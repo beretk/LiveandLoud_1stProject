@@ -121,7 +121,7 @@ SELECT * FROM ADMIN WHERE aID='admin';
 
 --------------------------------------------------------------
 -----------------  NoticeDao에 들어갈 query --------------------
---------------------------------------------------------------
+--------------------------------------------------------------order by fix desc, regdt desc
 -- (1) 글목록(startRow~endRow)
 SELECT * FROM NOTICE;
 SELECT A.*, ANAME FROM NOTICE N, ADMIN A

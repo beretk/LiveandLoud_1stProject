@@ -126,7 +126,7 @@ SELECT * FROM ADMIN;
 CREATE TABLE NOTICE(
     nID     NUMBER(6) PRIMARY KEY,         -- 글번호
     aID     VARCHAR2(30) REFERENCES ADMIN(aID) NOT NULL, -- 아이디
-    nTITLE  VARCHAR2(100) NOT NULL,         -- 글제목
+    nTITLE  VARCHAR2(200) NOT NULL,         -- 글제목
     nCONTENT VARCHAR2(4000),               -- 글본문
     nFILENAME VARCHAR2(100),
     nRDATE   DATE DEFAULT SYSDATE NOT NULL, -- 글 작성시점
@@ -155,7 +155,7 @@ COMMIT;
 CREATE TABLE PHOTO(
     pID     NUMBER(6) PRIMARY KEY,         -- 글번호
     aID     VARCHAR2(30) REFERENCES ADMIN(aID) NOT NULL, -- 아이디
-    pTITLE  VARCHAR2(100) NOT NULL,         -- 글제목
+    pTITLE  VARCHAR2(200) NOT NULL,         -- 글제목
     pCONTENT VARCHAR2(4000),               -- 글본문
     pFILENAME VARCHAR2(100),
     pRDATE   DATE DEFAULT SYSDATE NOT NULL, -- 글 작성시점
@@ -183,7 +183,7 @@ SELECT * FROM PHOTO;
 CREATE TABLE EQUIPMENT(
     eID     NUMBER(6) PRIMARY KEY,         -- 글번호
     aID     VARCHAR2(30) REFERENCES ADMIN(aID) NOT NULL, -- 아이디
-    eTITLE  VARCHAR2(100) NOT NULL,         -- 글제목
+    eTITLE  VARCHAR2(200) NOT NULL,         -- 글제목
     eCONTENT VARCHAR2(4000),               -- 글본문
     eFILENAME VARCHAR2(100),
     eRDATE   DATE DEFAULT SYSDATE NOT NULL, -- 글 작성시점
