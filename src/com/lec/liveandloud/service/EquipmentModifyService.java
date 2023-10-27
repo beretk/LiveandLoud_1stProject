@@ -38,10 +38,8 @@ public class EquipmentModifyService implements Service {
 			int eid = Integer.parseInt(mRequest.getParameter("eid"));
 			String etitle = mRequest.getParameter("etitle");
 			String econtent = mRequest.getParameter("econtent");
-			String eip = request.getRemoteAddr();
 			EquipmentDao equipmentDao = EquipmentDao.getInstance();
-			EquipmentDto equipmentDto = new EquipmentDto(eid, null, null, etitle, econtent, 
-											efileName, null, 0, 0, 0, 0, eip);
+			EquipmentDto equipmentDto = new EquipmentDto(eid, null, etitle, econtent, efileName);
 			result = equipmentDao.modifyEquipment(equipmentDto);
 			if(result == EquipmentDao.SUCCESS) { 
 				request.setAttribute("equipmentResult", "글수정 성공");
@@ -60,7 +58,7 @@ public class EquipmentModifyService implements Service {
 			try {
 				File serverFile = new File(path+"/" + efileName);
 				is = new FileInputStream(serverFile);
-				os = new FileOutputStream("C:/webPro/source/08_1stProject/LiveandLoud/WebContent/equipmentUp/" + efileName);
+				os = new FileOutputStream("C:/webPro/source/08_1stProject/liveandloud/WebContent/equipmentUp/" + efileName);
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true) {
 					int nByteCnt = is.read(bs);

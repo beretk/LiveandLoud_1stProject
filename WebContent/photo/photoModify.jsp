@@ -31,10 +31,6 @@
 		<input type="hidden" name="dbFileName" value="${photo.pfileName }">
 		<table>
 			<caption>${photo.aid }번 글 수정</caption>
-			<tr><th>작성자</th>
-					<td><input type="text" required="required"
-								value="${photo.aname }(${photo.aid })" readonly="readonly"></td>
-			</tr>
 			<tr><th>제목</th>
 					<td><input type="text" name="ptitle" required="required"
 								value="${photo.ptitle }"></td>

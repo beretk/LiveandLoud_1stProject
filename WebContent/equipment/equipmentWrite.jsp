@@ -33,7 +33,7 @@
 	<div id="content_form">
 		<form action="${conPath }/equipmentWrite.do" method="post" enctype="multipart/form-data">
 			<table>
-				<caption>글쓰기</caption>
+				<caption>장비등록</caption>
 				<tr>
 					<td>제목</td><td><input type="text" name="etitle" 	required="required"></td>
 				</tr>
@@ -43,9 +43,11 @@
 				<tr>
 					<td>첨부파일</td><td><input type="file" name="efilName"></td>
 				</tr>
+				
 				<tr><td colspan="2">
 							<input type="submit" value="글쓰기" class="btn">
-							<input type="reset" value="취소" class="btn">
+							<input type="reset" value="취소" class="btn" 
+								onclick="location.href='${conPath}/equipmentList.do'">
 							<input type="button" value="목록" class="btn"
 								onclick="location.href='${conPath}/equipmentList.do'">
 			</table>

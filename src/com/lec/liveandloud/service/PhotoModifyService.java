@@ -41,8 +41,7 @@ public class PhotoModifyService implements Service {
 			String pcontent = mRequest.getParameter("pcontent");
 			String pip = request.getRemoteAddr();
 			PhotoDao photoDao = PhotoDao.getInstance();
-			PhotoDto photoDto = new PhotoDto(pid, null, null, ptitle, pcontent, 
-											pfileName, null, 0, 0, 0, 0, pip);
+			PhotoDto photoDto = new PhotoDto(pid, null, ptitle, pcontent, pfileName);
 			result = photoDao.modifyPhoto(photoDto);
 			if(result == PhotoDao.SUCCESS) { 
 				request.setAttribute("photoResult", "글수정 성공");

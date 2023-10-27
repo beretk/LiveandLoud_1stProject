@@ -12,9 +12,6 @@ public class EquipmentContentService implements Service {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int eid = Integer.parseInt(request.getParameter("eid"));
 		EquipmentDao eDao = EquipmentDao.getInstance();
-		if(request.getParameter("after") == null) {
-			eDao.hitUp(eid);
-		}
 		EquipmentDto equipment = eDao.getEquipmentNotHitUp(eid);
 		request.setAttribute("equipment", equipment);
 

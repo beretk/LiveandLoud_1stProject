@@ -13,7 +13,7 @@ public class MAllViewService implements Service {
 		String pageNum = request.getParameter("pageNum");
 		if(pageNum==null) pageNum = "1";
 		int currentPage = Integer.parseInt(pageNum);
-		final int PAGESIZE=5, BLOCKSIZE=5;
+		final int PAGESIZE=4, BLOCKSIZE=2;
 		int startRow = (currentPage - 1) * PAGESIZE + 1;
 		int endRow   = startRow + PAGESIZE - 1;
 		MemberDao mDao = MemberDao.getInstance();

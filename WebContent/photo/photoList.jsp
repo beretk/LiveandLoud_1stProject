@@ -11,7 +11,8 @@
 	<link href="${conPath}/css/style.css" rel="stylesheet">
 	<style>
 		#content_form {
-			height:470px;
+			width:1000px;
+			height:800px;
 			margin: 30px auto 0px;
 		}
 		#content_form table tr { height: 10px;}
@@ -23,12 +24,15 @@
 	<script>
 		$(document).ready(function(){
 			$('tr').click(function(){
-				var pid = Number($(this).children().eq(0).text()); // 0번째 td안의 있는 text;
+				var pid = Number($(this).children().eq(0).text()); 
 				if(!isNaN(pid)){
 					location.href = '${conPath}/photoContent.do?pid='+ pid + '&pageNum=${pageNum}';
 				}
 			});
 		});
+		function tdClicked(pid){
+			location.href = '${conPath}/photoContent.do?pid=' + pid + '&pageNum=${pageNum}';
+		}
 	</script>
 </head>
 <body>
@@ -40,37 +44,30 @@
 		<table>
 			<tr>
 				<td>
-						<c:if test="${not empty admin }"><a href="${conPath }/photoWriteView.do">글쓰기</a></c:if>
-						<c:if test="${empty admin }"><a href="${conPath }/adminLoginView.do?next=photoWriteView.do">글쓰기</a></c:if>
+						<c:if test="${not empty admin }"><a href="${conPath }/photoWriteView.do">사진등록</a></c:if>
+						<c:if test="${empty admin }"><a href="${conPath }/adminLoginView.do?next=photoWriteView.do">사진등록</a></c:if>
 				</td>
 			</tr>
 		</table>
 		<br>
 		<table>
-			<tr><th>글번호</th><th>작성자</th><th>글제목</th><th>조회수</th><th>날짜</th><th>ip</th></tr>
 			<c:if test="${totCnt==0 }">
-				<tr><td colspan="6">등록된 글이 없습니다</td></tr>
+				<tr><td colspan="6">등록된 사진이 없습니다</td></tr>
 			</c:if>
-			<c:if test="${totCnt!=0 }">
-				<c:forEach items="${photoList }" var="photo">
-					<tr><td>${photo.pid }</td>
-							<td>${photo.aname }</td>
-							<td class="left">
-								<c:forEach var="i" begin="1" end="${photo.pindent }">
-									<c:if test="${i==photo.pindent }">└─</c:if>
-									<c:if test="${i!=photo.pindent }"> &nbsp; &nbsp; </c:if>
-								</c:forEach>
-								${photo.ptitle } <!-- 글제목에 a태그를 걸지 말고 query로 tr을 클릭하면 상세보기 페이지로 가기 -->
-								<c:if test="${not empty photo.pfileName }">
-									<img src="https://cdn-icons-png.flaticon.com/512/5088/5088374.png" width="10">
-								</c:if>
-							</td>
-							<td>${photo.phit }</td>
-							<td><fmt:formatDate value="${photo.prdate }" type="date" dateStyle="short"/></td>
-							<td>${photo.pip }</td>
-					</tr>
-				</c:forEach>
-			</c:if>
+			<tr>
+			<c:set var="i" value="0"/>
+			<c:forEach items="${photoList }" var="photo">
+				<c:if test="${i eq 4 }">
+					</tr><tr>
+				</c:if>
+				<td onclick="tdClicked('${photo.pid }')">
+					<%-- ${photo.pid }<br> --%>
+					${photo.ptitle } <!-- 글제목에 a태그를 걸지 말고 query로 tr을 클릭하면 상세보기 페이지로 가기 -->
+					<img src="${conPath }/photoUp/${photo.pfileName}" width="235">
+				</td>
+				<c:set var="i" value="${i + 1 }"/>					
+			</c:forEach>
+			</tr>
 		</table>
 		<div class="paging">
 			<c:if test="${startPage > BLOCKSIZE }">

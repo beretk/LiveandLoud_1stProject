@@ -42,8 +42,7 @@ public class EquipmentWriteService implements Service {
 				String econtent = mRequest.getParameter("econtent");
 				String eip = request.getRemoteAddr();
 				EquipmentDao equipmentDao = EquipmentDao.getInstance();
-				EquipmentDto equipmentDto = new EquipmentDto(0, aId, null, etitle, econtent, efileName,
-											null, maxSize, 0, 0, 0, eip);
+				EquipmentDto equipmentDto = new EquipmentDto(0, aId, etitle, econtent, efileName);
 				result = equipmentDao.writeEquipment(equipmentDto);
 				if(result == EquipmentDao.SUCCESS) {  
 					request.setAttribute("equipmentResult", "글쓰기 성공");
@@ -63,7 +62,7 @@ public class EquipmentWriteService implements Service {
 			try {
 				File serverFile = new File(path+"/" + efileName);
 				is = new FileInputStream(serverFile);
-				os = new FileOutputStream("C:/webPro/source/08_1stProject/LiveandLoud/WebContent/equipmentUp/" + efileName);
+				os = new FileOutputStream("C:/webPro/source/08_1stProject/liveandloud/WebContent/equipmentUp/" + efileName);
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true) {
 					int nByteCnt = is.read(bs);

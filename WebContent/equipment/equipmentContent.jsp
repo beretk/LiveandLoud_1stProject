@@ -14,6 +14,9 @@
 			height:1000px;
 			margin: 50px auto 0px;
 		}
+		#content_form tr{
+			border: 1px solid yellow;
+		}
 	</style>
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 	<script>
@@ -27,10 +30,8 @@
 	<div id="content_form">
 		<table>
 			<caption>${equipment.eid }글 상세보기</caption>
-			<tr><td>작성자</td><td>${equipment.aname} (${equipment.aid}) 님</td>	</tr>
 			<tr><td>제목</td><td>${equipment.etitle }</td></tr>
 			<tr><td>본문</td><td><pre>${equipment.econtent}</pre></td></tr>
-			<tr><th>조회수</th><td>${equipment.ehit }</td></tr>
 			<tr>
 				<th>첨부파일</th>
 				<td>

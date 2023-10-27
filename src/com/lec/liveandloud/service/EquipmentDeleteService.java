@@ -15,7 +15,7 @@ public class EquipmentDeleteService implements Service {
 		EquipmentDao equipmentDao = EquipmentDao.getInstance();
 		int deleteCnt = equipmentDao.deleteEquipment(eid);
 		if(deleteCnt >= EquipmentDao.SUCCESS) {
-			request.setAttribute("equipmentResult", "글 "+deleteCnt+"개 글 삭제 성공");
+			request.setAttribute("equipmentResult", "글 " + deleteCnt + "개 글 삭제 성공");
 		}
 	}
 }

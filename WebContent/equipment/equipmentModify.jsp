@@ -31,10 +31,6 @@
 		<input type="hidden" name="dbFileName" value="${equipment.efileName }">
 		<table>
 			<caption>${equipment.aid }번 글 수정</caption>
-			<tr><th>작성자</th>
-					<td><input type="text" required="required"
-								value="${equipment.aname }(${equipment.aid })" readonly="readonly"></td>
-			</tr>
 			<tr><th>제목</th>
 					<td><input type="text" name="etitle" required="required"
 								value="${equipment.etitle }"></td>

@@ -12,9 +12,6 @@ public class PhotoContentService implements Service {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		int pid = Integer.parseInt(request.getParameter("pid"));
 		PhotoDao pDao = PhotoDao.getInstance();
-		if(request.getParameter("after") == null) {
-			pDao.hitUp(pid);
-		}
 		PhotoDto photo = pDao.getPhotoNotHitUp(pid);
 		request.setAttribute("photo", photo);
 

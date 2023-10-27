@@ -140,7 +140,7 @@ CREATE TABLE NOTICE(
 CREATE SEQUENCE NOTICE_SEQ MAXVALUE 999999 NOCACHE NOCYCLE;
 SELECT * FROM NOTICE;
 
--- dummy data 
+-- dummy data (3개 이상 - 2개원글+1개답변글)
 -- 더미데이터 원글쓰기 (글1)
 INSERT INTO NOTICE (NID, AID, NTITLE, NCONTENT, NFILENAME, NGROUP, NSTEP, NINDENT, NIP)
     VALUES (NOTICE_SEQ.NEXTVAL, 'admin','글1','content',null, NOTICE_SEQ.CURRVAL, 0, 0, '192.168.20.31'); -- 첫번째 글1
@@ -157,24 +157,16 @@ CREATE TABLE PHOTO(
     aID     VARCHAR2(30) REFERENCES ADMIN(aID) NOT NULL, -- 아이디
     pTITLE  VARCHAR2(200) NOT NULL,         -- 글제목
     pCONTENT VARCHAR2(4000),               -- 글본문
-    pFILENAME VARCHAR2(100),
-    pRDATE   DATE DEFAULT SYSDATE NOT NULL, -- 글 작성시점
-    pHIT    NUMBER(6) DEFAULT 0,           -- 글 조회수
-    pGROUP  NUMBER(6) NOT NULL,            -- 글그룹(원글의 경우 글번호로/답변글일경우 원글의 BGROUP로)
-    pSTEP   NUMBER(2) NOT NULL,            -- 글그룹내 출력 순서(원글 0)
-    pINDENT NUMBER(3) NOT NULL,            -- 글 LIST 출력시 글 제목 들여쓰기 정도(원글0)
-    pIP     VARCHAR2(50) NOT NULL          -- 글 쓴 컴퓨터의 IP    
+    pFILENAME VARCHAR2(200) NOT NULL    
 );
 
 CREATE SEQUENCE PHOTO_SEQ MAXVALUE 999999 NOCACHE NOCYCLE;
 
 -- dummy data 
 -- 더미데이터 원글쓰기 (글1)
-INSERT INTO PHOTO (PID, AID, PTITLE, PCONTENT, PFILENAME, PGROUP, PSTEP, PINDENT, PIP)
-    VALUES (PHOTO_SEQ.NEXTVAL, 'admin','글1','content',null, PHOTO_SEQ.CURRVAL, 0, 0, '192.168.20.31'); -- 첫번째 글1
-SELECT * FROM PHOTO ORDER BY PGROUP DESC, PSTEP;
-  
-UPDATE PHOTO SET PHIT=11 WHERE PID=3;
+INSERT INTO PHOTO (PID, AID, PTITLE, PCONTENT, PFILENAME)
+    VALUES (PHOTO_SEQ.NEXTVAL, 'admin','글1','content','pa1.jpg');
+
 SELECT * FROM PHOTO;
 
 ----------------------------------------------------------------------
@@ -185,24 +177,16 @@ CREATE TABLE EQUIPMENT(
     aID     VARCHAR2(30) REFERENCES ADMIN(aID) NOT NULL, -- 아이디
     eTITLE  VARCHAR2(200) NOT NULL,         -- 글제목
     eCONTENT VARCHAR2(4000),               -- 글본문
-    eFILENAME VARCHAR2(100),
-    eRDATE   DATE DEFAULT SYSDATE NOT NULL, -- 글 작성시점
-    eHIT    NUMBER(6) DEFAULT 0,           -- 글 조회수
-    eGROUP  NUMBER(6) NOT NULL,            -- 글그룹(원글의 경우 글번호로/답변글일경우 원글의 BGROUP로)
-    eSTEP   NUMBER(2) NOT NULL,            -- 글그룹내 출력 순서(원글 0)
-    eINDENT NUMBER(3) NOT NULL,            -- 글 LIST 출력시 글 제목 들여쓰기 정도(원글0)
-    eIP     VARCHAR2(50) NOT NULL          -- 글 쓴 컴퓨터의 IP    
+    eFILENAME VARCHAR2(200) NOT NULL   
 );
 
 CREATE SEQUENCE EQUIPMENT_SEQ MAXVALUE 999999 NOCACHE NOCYCLE;
 
--- dummy data 
+-- dummy data
 -- 더미데이터 원글쓰기 (글1)
-INSERT INTO EQUIPMENT (EID, AID, ETITLE, ECONTENT, EFILENAME, EGROUP, ESTEP, EINDENT, EIP)
-    VALUES (EQUIPMENT_SEQ.NEXTVAL, 'admin','글1','content',null, EQUIPMENT_SEQ.CURRVAL, 0, 0, '192.168.20.31'); -- 첫번째 글1
-SELECT * FROM EQUIPMENT ORDER BY EGROUP DESC, ESTEP;
-  
-UPDATE EQUIPMENT SET EHIT=11 WHERE EID=3;
+INSERT INTO EQUIPMENT (EID, AID, ETITLE, ECONTENT, EFILENAME)
+    VALUES (EQUIPMENT_SEQ.NEXTVAL, 'admin', '콘솔', 'content', 'pa1.jpg'); 
+
 SELECT * FROM EQUIPMENT;
 
 ------------------------------------------------
@@ -214,5 +198,7 @@ SELECT * FROM ADMIN;
 SELECT * FROM NOTICE;
 SELECT * FROM PHOTO;
 SELECT * FROM EQUIPMENT;
+
+
 
 

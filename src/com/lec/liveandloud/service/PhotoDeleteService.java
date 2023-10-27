@@ -14,7 +14,7 @@ public class PhotoDeleteService implements Service {
 		PhotoDao photoDao = PhotoDao.getInstance();
 		int deleteCnt = photoDao.deletePhoto(pid);
 		if(deleteCnt >= PhotoDao.SUCCESS) {
-			request.setAttribute("photoResult", "글 "+deleteCnt+"개 글 삭제 성공");
+			request.setAttribute("photoResult", "글 " + deleteCnt + "개 글 삭제 성공");
 		}
 	}
 }

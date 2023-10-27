@@ -24,7 +24,7 @@
 	</script>
 </head>
 <body>
-	<c:if test="${empty admin }"> 
+	<c:if test="${empty admin }"> <!-- 로그인 후에만 글쓰기 가능 -->
 		<script>
 			location.href='${conPath}/adminLoginView.do?next=photoWriteView.do';
 		</script>
@@ -33,7 +33,7 @@
 	<div id="content_form">
 		<form action="${conPath }/photoWrite.do" method="post" enctype="multipart/form-data">
 			<table>
-				<caption>글쓰기</caption>
+				<caption>사진등록</caption>
 				<tr>
 					<td>제목</td><td><input type="text" name="ptitle" 	required="required"></td>
 				</tr>
@@ -45,7 +45,8 @@
 				</tr>
 				<tr><td colspan="2">
 							<input type="submit" value="글쓰기" class="btn">
-							<input type="reset" value="취소" class="btn">
+							<input type="reset" value="취소" class="btn" 
+								onclick="location.href='${conPath}/photoList.do'">
 							<input type="button" value="목록" class="btn"
 								onclick="location.href='${conPath}/photoList.do'">
 			</table>

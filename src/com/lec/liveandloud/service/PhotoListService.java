@@ -16,21 +16,21 @@ public class PhotoListService implements Service {
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
 		String pageNum = request.getParameter("pageNum");
 		if(pageNum==null) {
-			if(request.getAttribute("pageNum")!=null) { // 글 수정이나 답변글처리시 mRequest를 사용하여서 request에 set함
+			if(request.getAttribute("pageNum")!=null) { 
 				pageNum = (String)request.getAttribute("pageNum");
 			}else {
 				pageNum = "1";
 			}
 		}
 		int currentPage = Integer.parseInt(pageNum);
-		final int PAGESIZE=4, BLOCKSIZE=2;
+		final int PAGESIZE=8, BLOCKSIZE=2;
 		int startRow = (currentPage-1) * PAGESIZE +1;
 		int endRow   = startRow + PAGESIZE -1;
 		PhotoDao photoDao = PhotoDao.getInstance();
 		ArrayList<PhotoDto> photoList = photoDao.listPhoto(startRow, endRow);
 		request.setAttribute("photoList", photoList);
-		int totCnt = photoDao.getNoticeTotCnt(); // 글갯수
-		int pageCnt = (int)Math.ceil((double)totCnt/PAGESIZE);//페이지갯수
+		int totCnt = photoDao.getNoticeTotCnt();
+		int pageCnt = (int)Math.ceil((double)totCnt/PAGESIZE);
 		int startPage = ((currentPage-1)/BLOCKSIZE)*BLOCKSIZE+1;
 		int endPage = startPage + BLOCKSIZE - 1;
 		if(endPage>pageCnt) {
