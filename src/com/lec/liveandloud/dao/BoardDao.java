@@ -38,7 +38,7 @@ public class BoardDao {
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
 		String sql = "SELECT * FROM" + 
-				"  (SELECT ROWNUM RN, A.* FROM (SELECT F.*, MNAME FROM FILEBOARD F, MVC_MEMBER M" + 
+				"  (SELECT ROWNUM RN, A.* FROM (SELECT F.*, MNAME FROM FILEBOARD F, MEMBER M" + 
 				"                              WHERE F.MID=M.MID " + 
 				"                              ORDER BY FGROUP DESC, FSTEP) A)" + 
 				"  WHERE RN BETWEEN ? AND ?";
@@ -163,7 +163,7 @@ public class BoardDao {
 		PreparedStatement pstmt = null;
 		ResultSet         rs    = null;
 		String sql = "SELECT F.*, MNAME " + 
-				"  FROM FILEBOARD F, MVC_MEMBER M WHERE F.MID=M.MID AND FID=?";
+				"  FROM FILEBOARD F, MEMBER M WHERE F.MID=M.MID AND FID=?";
 		try {
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement(sql);

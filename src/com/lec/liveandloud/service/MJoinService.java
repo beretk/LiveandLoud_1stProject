@@ -71,7 +71,7 @@ public class MJoinService implements Service {
 			try{
 				is = new FileInputStream(serverFile); // 서버에 업로드된 파일
 				os = 
-				new FileOutputStream("C:/webPro/source/07_jQuery/model2ex/WebContent/memberPhotoUp/"
+				new FileOutputStream("C:/webPro/source/08_1stProject/liveandloud/WebContent/memberPhotoUp/"
 							+ mphoto);
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true){

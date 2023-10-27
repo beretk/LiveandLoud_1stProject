@@ -82,7 +82,7 @@ public class MModifyService implements Service {
 			OutputStream os = null;
 			try{
 				is = new FileInputStream(serverFile); // 서버에 업로드된 파일
-				os = new FileOutputStream("D:/webPro/source/07_jQuery/model2ex/WebContent/memberPhotoUp/"
+				os = new FileOutputStream("C:/webPro/source/08_1stProject/LiveandLoud/WebContent/memberPhotoUp/"
 								+ mphoto);
 				byte[] bs = new byte[(int)serverFile.length()];
 				while(true){

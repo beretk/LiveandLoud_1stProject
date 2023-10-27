@@ -10,7 +10,7 @@ SELECT COUNT(*) CNT FROM MEMBER WHERE mEMAIL='aaa@naver.com';
 
 -- (3) 회원가입
 INSERT INTO MEMBER (mID, mPw, mName, mEmail, mPhoto, mBirth, mAddress)
-    VALUES ('bae','1','배두나','bae@naver.com', 'NOIMG.JPG', '1980/12/25','서울시');
+    VALUES ('tom','1','톰크루즈','tom@naver.com', '톰크루즈.jpg', '1980/12/25','서울시');
     
 -- (4) 로그인
 SELECT * FROM MEMBER WHERE mID='aaa' and mPW='1';
@@ -41,7 +41,7 @@ SELECT COUNT (*) CNT FROM MEMBER;
 
 -- (9) 회원탈퇴
 COMMIT;
-DELETE MEMBER WHERE mID='aaa';
+DELETE MEMBER WHERE mID='tom';
 ROLLBACK;
 
 SELECT * FROM MEMBER ORDER BY mRDATE DESC; 
@@ -59,7 +59,7 @@ SELECT * FROM
   (SELECT ROWNUM RN, A.* FROM (SELECT F.*, MNAME FROM FILEBOARD F, MEMBER M
                               WHERE F.MID=M.MID 
                               ORDER BY FGROUP DESC, FSTEP) A)
-  WHERE RN BETWEEN 2 AND 4; -- dao에 쓸 query
+  WHERE RN BETWEEN 1 AND 10; -- dao에 쓸 query
     
 -- (2) 글갯수
 SELECT COUNT(*) CNT FROM FILEBOARD;
@@ -107,7 +107,7 @@ INSERT INTO FILEBOARD (FID, MID, FTITLE, FCONTENT, FFILENAME, FGROUP, FSTEP, FIN
 COMMIT;
 
 -- (10) 회원탈퇴시 탈퇴하는 회원(mid)이 쓴 글 모두 삭제하기
-DELETE FROM FILEBOARD WHERE MID='son';
+DELETE FROM FILEBOARD WHERE MID='cha';
 ROLLBACK;
 
 --------------------------------------------------------------
@@ -135,9 +135,9 @@ SELECT * FROM
 SELECT COUNT(*) CNT FROM NOTICE;
 
 -- (3) 글쓰기(원글쓰기) 
-INSERT INTO FILEBOARD (FID, MID, FTITLE, FCONTENT, FFILENAME, FGROUP, FSTEP, FINDENT, FIP)
-  VALUES (FILEBOARD_SEQ.NEXTVAL, 'admin','토트넘','난 공격수', 'a.docx', 
-    FILEBOARD_SEQ.CURRVAL, 0,0, '192.168.0.31');
+INSERT INTO NOTICE (NID, AID, NTITLE, NCONTENT, NFILENAME, NGROUP, NSTEP, NINDENT, NIP)
+  VALUES (NOTICE_SEQ.NEXTVAL, 'admin','토트넘','난 공격수', 'a.docx', 
+    NOTICE_SEQ.CURRVAL, 0,0, '192.168.0.31');
     
 -- (4) hit 1회 올리기
 UPDATE NOTICE SET NHIT = NHIT + 1 WHERE NID=1;
@@ -181,7 +181,7 @@ SELECT COUNT(*) CNT FROM PHOTO;
 
 -- (3) 글쓰기(원글쓰기) 
 INSERT INTO PHOTO (PID, AID, PTITLE, PCONTENT, PFILENAME)
-  VALUES (PHOTOSEQ.NEXTVAL, 'admin','콘솔시스템','음향최고', 'pa2.jpg');
+  VALUES (PHOTO_SEQ.NEXTVAL, 'admin','콘솔시스템','음향최고', 'pa2.jpg');
 
 -- (4) 글번호(nid)로 글전체 내용(PhotoDto) 가져오기
 SELECT P.*, ANAME

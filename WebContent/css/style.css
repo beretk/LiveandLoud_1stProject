@@ -14,6 +14,7 @@
 /* #content_form table tr:hover { background-color: rgb(255, 128, 255);
 	cursor: pointer;
 } */
+#content_form table tr{cursor: pointer;}
 #content_form td, #content_form th {text-align: center; padding:5px; }
 #content_form caption {font-size: 20px; padding:10px;}
 #content_form h2, #content_form b{text-align: center; color:yellow;}/* red*/
