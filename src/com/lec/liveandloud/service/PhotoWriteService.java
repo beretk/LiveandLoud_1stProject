@@ -47,16 +47,16 @@ public class PhotoWriteService implements Service {
 				result = photoDao.writePhoto(photoDto);
 				// joinAdmin결과에 따라 적절히 request.setAttribute
 				if(result == PhotoDao.SUCCESS) {  
-					request.setAttribute("photoResult", "글쓰기 성공");
+					request.setAttribute("photoResult", "사진등록 성공");
 				}else {
-					request.setAttribute("photoResult", "글쓰기 실패");
+					request.setAttribute("photoResult", "사진등록 실패");
 				}
 			}else {
 				request.setAttribute("photoResult", "관리자만 글쓸 수 있어요");
 			}
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			request.setAttribute("photoResult", "글쓰기 실패");
+			request.setAttribute("photoResult", "사진등록 실패");
 		}
 		if(pfileName!=null && result==AdminDao.SUCCESS) {
 			InputStream  is = null;

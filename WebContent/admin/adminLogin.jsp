@@ -25,7 +25,7 @@
 	</c:if>
 	<c:if test="${not empty member }">
 		<script>
-			alert('사용자 왔구낭'); 
+			alert('관리자만 등록할수 있습니다'); 
 			history.back();
 		</script>
 	</c:if>

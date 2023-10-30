@@ -18,7 +18,10 @@
 		}
 		header a {text-decoration: none; font-weight: bold;}
 		header li { list-style: none;}
-		header .gnb{width: 100%;	background-color: gray;}
+		header .gnb{
+			width: 100%;	
+			background-color: gray;
+		}
 		header .gnb ul {
 			overflow: hidden;
 			width:700px;
@@ -44,7 +47,7 @@
 		}
 		header .lnb {
 		  /* width: 100%; height: 40px; */
-			width: 100%; height: 40px;
+			width: 900px; height: 40px; margin:0 auto;
 			border-top: 2px solid yellow;
 			/* border-bottom: 2px dashed #FFFFFF; */
 			border-bottom: 2px solid yellow;
@@ -75,21 +78,6 @@
 			float: left; list-style: none; margin: 3px;
 		}
 	</style>
-	<!-- <script>
-        var overImg = ['../img/fmenu_022.jpg','../img/fmenu_032.jpg'];
-        var outImg = ['../img/fmenu_021.jpg','../img/fmenu_031.jpg'];
-        var img;
-        window.onload = function(){
-            imgs = document.getElementsByTagName('img');
-                     
-        };
-        function mouseOver(n){
-            imgs[n].setAttribute('src', overImg[n]);
-        }
-        function mouseOut(n){
-            imgs[n].setAttribute('src', outImg[n]);
-        }
-    </script> -->
 </head>
 <body>
 <header>
@@ -107,14 +95,12 @@
 		
 		<div class="lnb">
         	<ul>
-        		<%-- <li><a href="${conPath }/intro.jsp">소개 </a></li> --%> 
-        		<li><a href="http://liveandloud.co.kr/homepage/image/intro2.jpg">소개</a></li>
+        		<li><a href="${conPath }/intro.do">소개</a></li>
                 <li><a href="${conPath }/equipmentList.do">장비</a></li>
                 <li><a href="${conPath }/noticeList.do">공지사항</a></li>
                 <li><a href="${conPath }/photoList.do">공연사진</a>
                 <li><a href="${conPath }/boardList.do">게시판</a></li>
-                <li><a href="http://liveandloud.co.kr/homepage/image/map.jpg">약도</a></li>
-                <!-- <li><a href="../admin/map.jsp">약도</a></li> -->
+                <li><a href="${conPath }/map.do">약도</a></li>
         	</ul>
         	<br>
         	
@@ -124,25 +110,47 @@
 	<c:if test="${not empty member and empty admin}"> <%-- 사용자 모드 로그인 화면--%>
 		<div class="gnb">
 			<ul>
-				<li><a href="${conPath }/boardList.do">게시판</a></li>
 				<li><a href="${conPath }/modifyView.do">정보수정</a></li>
 				<li><a>${member.mname }님 &nbsp; ▶</a></li>	
 				<li><a href="${conPath }/logout.do">로그아웃</a></li>
 			</ul>
 		</div>
-		
+		<div class="logo" onclick="location.href='${conPath}/main.do'">
+			<img alt="" src="${conPath }/img/head_01.jpg">
+		</div>
+		<div class="lnb">
+        	<ul>
+        		<li><a href="http://liveandloud.co.kr/homepage/image/intro2.jpg">소개</a></li>
+                <li><a href="${conPath }/equipmentList.do">장비</a></li>
+                <li><a href="${conPath }/noticeList.do">공지사항</a></li>
+                <li><a href="${conPath }/photoList.do">공연사진</a>
+                <li><a href="${conPath }/boardList.do">게시판</a></li>
+                <li><a href="http://liveandloud.co.kr/homepage/image/map.jpg">약도</a></li>
+        	</ul>
+        	<br>        	
+        </div>
 	</c:if>
 	<c:if test="${empty member and not empty admin}"> <%-- 관리자 모드 로그인 화면--%>
 		<div class="gnb">
 			<ul>
 				<li><a href="${conPath }/logout.do">관리자모드나가기</a></li>
-				<li><a href="${conPath }/equipmentList.do">장비</a></li>
-				<li><a href="${conPath }/noticeList.do">공지사항</a></li>
-				<li><a href="${conPath }/photoList.do">공연사진</a></li>
-				<li><a href="${conPath }/boardList.do">게시판</a></li>
 				<li><a>${admin.aname }님 &nbsp; ▶</a></li>	
 			</ul>
 		</div>
+		<div class="logo" onclick="location.href='${conPath}/main.do'">
+			<img alt="" src="${conPath }/img/head_01.jpg">
+		</div>
+		<div class="lnb">
+        	<ul>
+        		<li><a href="http://liveandloud.co.kr/homepage/image/intro2.jpg">소개</a></li>
+                <li><a href="${conPath }/equipmentList.do">장비</a></li>
+                <li><a href="${conPath }/noticeList.do">공지사항</a></li>
+                <li><a href="${conPath }/photoList.do">공연사진</a>
+                <li><a href="${conPath }/boardList.do">게시판</a></li>
+                <li><a href="http://liveandloud.co.kr/homepage/image/map.jpg">약도</a></li>
+        	</ul>
+        	<br>        	
+        </div>
 		<div class="logo" onclick="location.href='${conPath}/allView.do'">
 			LOGO
 		</div>

@@ -44,15 +44,15 @@ public class PhotoModifyService implements Service {
 			PhotoDto photoDto = new PhotoDto(pid, null, ptitle, pcontent, pfileName);
 			result = photoDao.modifyPhoto(photoDto);
 			if(result == PhotoDao.SUCCESS) { 
-				request.setAttribute("photoResult", "글수정 성공");
+				request.setAttribute("photoResult", "사진등록 수정 성공");
 			}else {
-				request.setAttribute("photoResult", "글수정 실패");
+				request.setAttribute("photoResult", "사진등록 수정 실패");
 			}
 			//★mRequest에서 넘어온 pageNum(mRequest를 사용하면 request의 파라미터들이 다 null이 됨)을 request에 set : modify,reply★
 			request.setAttribute("pageNum", mRequest.getParameter("pageNum"));
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			request.setAttribute("photoResult", "글수정 실패");
+			request.setAttribute("photoResult", "사진등록 수정 실패");
 		}
 		if(dbFileName!=null && !pfileName.equals(dbFileName) && result==AdminDao.SUCCESS) { 
 			InputStream  is = null;

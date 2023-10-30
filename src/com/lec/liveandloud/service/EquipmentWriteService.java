@@ -45,16 +45,16 @@ public class EquipmentWriteService implements Service {
 				EquipmentDto equipmentDto = new EquipmentDto(0, aId, etitle, econtent, efileName);
 				result = equipmentDao.writeEquipment(equipmentDto);
 				if(result == EquipmentDao.SUCCESS) {  
-					request.setAttribute("equipmentResult", "글쓰기 성공");
+					request.setAttribute("equipmentResult", "장비등록 성공");
 				}else {
-					request.setAttribute("equipmentResult", "글쓰기 실패");
+					request.setAttribute("equipmentResult", "장비등록 실패");
 				}
 			}else {
 				request.setAttribute("equipmentResult", "관리자만 글쓸 수 있어요");
 			}
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			request.setAttribute("equipmentResult", "글쓰기 실패");
+			request.setAttribute("equipmentResult", "장비등록 실패");
 		}
 		if(efileName!=null && result==AdminDao.SUCCESS) {
 			InputStream  is = null;

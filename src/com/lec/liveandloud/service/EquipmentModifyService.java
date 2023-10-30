@@ -42,15 +42,15 @@ public class EquipmentModifyService implements Service {
 			EquipmentDto equipmentDto = new EquipmentDto(eid, null, etitle, econtent, efileName);
 			result = equipmentDao.modifyEquipment(equipmentDto);
 			if(result == EquipmentDao.SUCCESS) { 
-				request.setAttribute("equipmentResult", "글수정 성공");
+				request.setAttribute("equipmentResult", "장비등록 수정 성공");
 			}else {
-				request.setAttribute("equipmentResult", "글수정 실패");
+				request.setAttribute("equipmentResult", "장비등록 수정 실패");
 			}
 			//★mRequest에서 넘어온 pageNum(mRequest를 사용하면 request의 파라미터들이 다 null이 됨)을 request에 set : modify,reply★
 			request.setAttribute("pageNum", mRequest.getParameter("pageNum"));
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
-			request.setAttribute("equipmentResult", "글수정 실패");
+			request.setAttribute("equipmentResult", "장비등록 수정 실패");
 		}
 		if(dbFileName!=null && !efileName.equals(dbFileName) && result==AdminDao.SUCCESS) { 
 			InputStream  is = null;

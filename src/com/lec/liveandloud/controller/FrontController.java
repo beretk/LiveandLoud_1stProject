@@ -208,6 +208,10 @@ public class FrontController extends HttpServlet {
 			service = new EquipmentDeleteService();
 			service.execute(request, response);
 			viewPage = "equipmentList.do";		
+		}else if(command.equals("/intro.do")) {
+			viewPage = "intro/intro.jsp";
+		}else if(command.equals("/map.do")) {
+			viewPage = "map/map.jsp";
 		}
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);

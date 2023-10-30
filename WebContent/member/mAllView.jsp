@@ -39,8 +39,11 @@
 						<img src="${conPath }/memberPhotoUp/${dto.mphoto}"
 								alt="${dto.mname }사진" width="120">
 						<p>
-							${dto.mname }<br>
-							(${dto.mid })
+							이름 : ${dto.mname }<br>
+							아이디 : ${dto.mid }<br>
+							이메일 : ${dto.memail }<br>
+							생년월일 : ${dto.mbirth }<br>
+							주소 : ${dto.maddress }
 						</p>
 					</td>
 				</c:forEach>
