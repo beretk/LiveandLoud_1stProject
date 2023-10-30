@@ -12,7 +12,7 @@
 	<style>
 		#content_form {
 			width:1000px;
-			height:800px;
+			height:500px;
 			margin: 30px auto 0px;
 		}
 		#content_form table tr { height: 10px;}

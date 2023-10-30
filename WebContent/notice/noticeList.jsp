@@ -38,8 +38,8 @@
 		<table>
 			<tr>
 				<td>
-						<c:if test="${not empty admin }"><a href="${conPath }/noticeWriteView.do">글쓰기</a></c:if>
-						<c:if test="${empty admin }"><a href="${conPath }/adminLoginView.do?next=noticeWriteView.do">글쓰기</a></c:if>
+						<c:if test="${not empty admin }"><a href="${conPath }/noticeWriteView.do">공지글쓰기</a></c:if>
+						<c:if test="${empty admin }"><a href="${conPath }/adminLoginView.do?next=noticeWriteView.do">공지글쓰기</a></c:if>
 				</td>
 			</tr>
 		</table>
