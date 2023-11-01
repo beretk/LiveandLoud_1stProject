@@ -14,16 +14,16 @@ LiveandLoud
 ![대표](https://github.com/beretk/LiveandLoud_1stProject/assets/137759605/f64e5c24-3957-4cea-988b-e4848f7b020b)
 
 # 목차
-[1. 주제 및 목적] <br>
-[2. 개발환경] <br>
-[3. 작업분할 구조도(WBS)] <br>
-[4. 작업일정 Gantt Chart] <br>
-[5. 요구사항분석] <br>
-[6. 유스케이스 다이어그램 Usecase Diagram] <br>
-[7. 순차 다이어그램 Sequence Diagram] <br>
-[8. 기능정의 및 설계] <br>
-[9. DB 설계 및 ERD] <br>
-[10. UI 화면 및 기능설명] <br>
+[1. 주제 및 목적](https://github.com/beretk/LiveandLoud_1stProject#1-%EC%A3%BC%EC%A0%9C-%EB%B0%8F-%EB%AA%A9%EC%A0%81) <br>
+[2. 개발환경](https://github.com/beretk/LiveandLoud_1stProject#2-%EA%B0%9C%EB%B0%9C%ED%99%98%EA%B2%BD) <br>
+[3. 작업분할 구조도(WBS)](https://github.com/beretk/LiveandLoud_1stProject#3-%EC%9E%91%EC%97%85%EB%B6%84%ED%95%A0-%EA%B5%AC%EC%A1%B0%EB%8F%84wbs) <br>
+[4. 작업일정 Gantt Chart](https://github.com/beretk/LiveandLoud_1stProject#4-%EC%9E%91%EC%97%85%EC%9D%BC%EC%A0%95-gantt-chart) <br>
+[5. 요구사항분석](https://github.com/beretk/LiveandLoud_1stProject#5-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD%EB%B6%84%EC%84%9D) <br>
+[6. 유스케이스 다이어그램 Usecase Diagram](https://github.com/beretk/LiveandLoud_1stProject#6-%EC%9C%A0%EC%8A%A4%EC%BC%80%EC%9D%B4%EC%8A%A4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8-usecase-diagram) <br>
+[7. 순차 다이어그램 Sequence Diagram](https://github.com/beretk/LiveandLoud_1stProject#7-%EC%88%9C%EC%B0%A8-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8-sequence-diagram) <br>
+[8. 기능정의 및 설계](https://github.com/beretk/LiveandLoud_1stProject#8-%EA%B8%B0%EB%8A%A5%EC%A0%95%EC%9D%98-%EB%B0%8F-%EC%84%A4%EA%B3%84) <br>
+[9. DB 설계 및 ERD](https://github.com/beretk/LiveandLoud_1stProject#9-db-%EC%84%A4%EA%B3%84-%EB%B0%8F-erd) <br>
+[10. UI 화면 및 기능설명](https://github.com/beretk/LiveandLoud_1stProject#10-ui-%ED%99%94%EB%A9%B4-%EB%B0%8F-%EA%B8%B0%EB%8A%A5%EC%84%A4%EB%AA%85) <br>
 
 ## 1. 주제 및 목적
 ![슬라이드3](https://github.com/beretk/LiveandLoud_1stProject/assets/137759605/7977544f-8e48-48b5-9667-d6b2bdb45e5d)
