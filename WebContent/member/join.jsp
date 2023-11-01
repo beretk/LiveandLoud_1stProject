@@ -17,7 +17,7 @@
   		$('input[name="mid"]').keyup(function(){
   			var mid = $(this).val();
   			if(mid.length<2){
-  				$('#midConfirmResult').text('아이디는 2글자 이상');
+  				$('#midConfirmResult').text('아이디는 2글자 이상 입력 하세요');
   			}else{
   				$.ajax({
   					url : '${conPath}/midConfirm.do',
@@ -37,9 +37,9 @@
   			if(!pw && !pwChk){
   				$('#mpwChkResult').html(' &nbsp; ');
   			}else if(pw == pwChk){
-  				$('#mpwChkResult').text('비밀번호 일치');
+  				$('#mpwChkResult').text('비밀번호가 일치 합니다');
   			}else{
-  				$('#mpwChkResult').text('비밀번호 불일치');
+  				$('#mpwChkResult').text('비밀번호가 일치하지 않습니다');
   			}
   		});// keyup event(비밀번호 일치 확인용)
   		 
@@ -68,11 +68,11 @@
 			var midConfirmResult = $('#midConfirmResult').text().trim();
   			var mpwChkResult = $('#mpwChkResult').text().trim();
   			var memailConfirmResult = $('#memailConfirmResult').text().trim();
-  			if(midConfirmResult != '사용 가능한 ID'){
-  				alert('사용 가능한 ID인지 확인 요망');
+  			if(midConfirmResult != '사용 가능한 ID 입니다'){
+  				alert('사용 가능한 ID인지 확인 하시기 바랍니다');
   				$('input[name="mid"]').focus();
   				return false;  
-  			}else if(mpwChkResult != '비밀번호 일치'){
+  			}else if(mpwChkResult != '비밀번호가 일치 합니다'){
   				alert('비밀번호를 확인하세요');
   				$('input[name="mpw"]').focus();
   				return false;
